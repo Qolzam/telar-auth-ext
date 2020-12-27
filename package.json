@@ -75,7 +75,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Qolzam/telar-auth-ext-js.git"
+    "url": "https://github.com/Qolzam/telar-auth-ext.git"
   },
   "keywords": [
     "telar",
@@ -91,9 +91,9 @@
   "author": "Amir Movahedi <amir.gholzam@live.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Qolzam/telar-auth-ext-js/issues"
+    "url": "https://github.com/Qolzam/telar-auth-ext/issues"
   },
-  "homepage": "https://github.com/Qolzam/telar-auth-ext-js#readme",
+  "homepage": "https://github.com/Qolzam/telar-auth-ext#readme",
   "dependencies": {
     "hybrid-crypto-js": "^0.2.4",
     "koa-bodyparser": "^4.3.0",
