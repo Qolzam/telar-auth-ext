@@ -24,7 +24,7 @@ describe('Server', () => {
         publicKey,
         payloadSecret,
     };
-    const signedJWT = signJWT(privateKey, headers, 60);
+    const signedJWT = signJWT(privateKey, { claim: headers }, 60);
     const splittedSignedJWT = signedJWT.split('.');
     const cookies = {
         [authConfig.headerCookieName]: splittedSignedJWT[0],

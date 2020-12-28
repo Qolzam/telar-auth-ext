@@ -113,7 +113,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@commitlint/prompt": "^11.0.0",
     "@koa/router": "^10.0.0",
-    "@telar/core": "1.2.1",
+    "@telar/core": "1.2.2",
     "@telar/mvc": "^1.4.3",
     "@types/jest": "^26.0.15",
     "@types/koa__router": "^8.0.3",

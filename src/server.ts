@@ -101,7 +101,7 @@ export function hmacProtection(
         try {
             validateRequest(body, payloadSecret, xCloudSignature);
         } catch (error) {
-            log.info('[ERROR] Core: HMAC Error %s', error);
+            log.error('Core: HMAC Error %s', error);
             throw error;
         }
         const userID = headers['uid'];
@@ -129,7 +129,7 @@ export function hmacProtection(
         return authedUser;
     }
 
-    log.info('[INFO] Core: HMAC is not presented.');
+    log.info('Core: HMAC is not presented.');
     if (mustPresentHMAC) {
         throw new Error('HMAC not presented');
     }
@@ -147,7 +147,7 @@ export function cookieProtection(cookies: any, config: AuthConfig, checkAdmin: b
         throw new Error(`Claims is null!`);
     }
     // Parse claim to request
-    return parseClaim(claims, checkAdmin);
+    return parseClaim(claims.claim, checkAdmin);
 }
 
 // readCookie read cookies in a map
@@ -189,7 +189,13 @@ function readCookie(cookies: any, config: AuthConfig): AuthCookie {
 }
 
 // parseCookie
-function parseClaimFromCookie(cookieMap: AuthCookie, config: AuthConfig): Claims | null {
+function parseClaimFromCookie(
+    cookieMap: AuthCookie,
+    config: AuthConfig,
+): {
+    [key: string]: any;
+    claim: Claims;
+} {
     if (!config.publicKey) {
         throw new Error('[publicKey] is not apeared in config file');
     }
@@ -197,7 +203,6 @@ function parseClaimFromCookie(cookieMap: AuthCookie, config: AuthConfig): Claims
     const cookie = `${cookieMap.header}.${cookieMap.payload}.${cookieMap.sign}`;
     return securityUtils.verifyJWT(cookie, keydata);
 }
-
 // hmacCookieProtection check protection
 export function hmacCookieProtection(meta: MetaHMACCookie) {
     const hmacClaim = hmacProtection(meta.headers, meta.body, meta.payloadSecret, meta.mustPresentHMAC);

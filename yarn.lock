@@ -678,9 +678,9 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@telar/core@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.npmjs.org/@telar/core/-/core-1.2.1.tgz#68835bf26e82a5b314e8a6fb0b4bc55a5dcb3452"
+"@telar/core@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/@telar/core/-/core-1.2.2.tgz#00a02296323079cff07b5472ce71615d55f0b114"
   dependencies:
     "@koa/router" "^10.0.0"
     "@types/express" "^4.17.8"
