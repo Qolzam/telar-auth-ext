@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/Qolzam/telar-auth-ext/compare/v1.0.0...v1.0.1) (2020-12-28)
+
+
+### Bug Fixes
+
+* add claim in JWT ([a4132d1](https://github.com/Qolzam/telar-auth-ext/commit/a4132d156dff9f853059dcc2f17654cd283f4021))
+
 # 1.0.0 (2020-12-27)
 
 
